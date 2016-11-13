@@ -34,9 +34,14 @@
 		circles.attr("cx", function(d, i) {
 			return (i * 50) + 25;
 		})
-		.attr("cy", h/2)
+		.attr("cy", h)
 		.attr("r", function(d) {
 			return d;
+		})
+		.attr("fill","yellow")
+		.attr("stroke", "orange")
+		.attr("stroke-width", function(d) {
+			return d/2;
 		});
 
 	</script>
