@@ -5,6 +5,15 @@
 	<title>D3 Page Template</title>
 	<script type="text/javascript" src="d3/d3.js" ></script>
 	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	<style type="text/css">
+		div.bar {
+			display: inline-block;
+			margin-right: 1px;
+			width: 20px;
+			height: 75px;
+			background-color: teal;
+		}
+	</style>
 </head>
 <body>
 	<script type="text/javascript" >
@@ -13,16 +22,12 @@
 		d3.select("body").selectAll("p" )
 			 .data(dataset)
 			 .enter()
-			 .append("p")
-			 .text(function(d) {
-			 	return "I can count up to " + d;
+			 .append("div")
+			 .attr("class", "bar")
+			 .style("height", function(d) {
+			 	return d * 10 + "px";
 			 })
-			 .style("color", function(d) {
-			 	if(d >= 15) 
-			 		return "red";
-			 	else 
-			 		return "black";
-			 });
+			 
 	</script>
 </body>
 </html>
