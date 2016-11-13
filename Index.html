@@ -4,18 +4,17 @@
 	<meta charset="utf-8" >
 	<title>D3 Page Template</title>
 	<script type="text/javascript" src="d3/d3.js" ></script>
+	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
 </head>
 <body>
 	<script type="text/javascript" >
 		var dataset = [ 5, 10, 15, 20, 25 ];
 
-		d3.select("body")
-		  .append("p")
-		  .text("New paragraph!");
-
-		d3.csv("name.csv", function(data) {
-			console.log(data);
-		});
+		d3.select("body").selectAll("p" )
+			 .data(dataset)
+			 .enter()
+			 .append("p" )
+			 .text("New paragraph!");
 	</script>
 </body>
 </html>
