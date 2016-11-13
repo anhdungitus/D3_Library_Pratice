@@ -13,9 +13,9 @@
 		d3.select("body").selectAll("p" )
 			 .data(dataset)
 			 .enter()
-			 .append("p" )
+			 .append("p")
 			 .text(function(d) {
-			 	return d;
+			 	return "I can count up to" + d;
 			 });
 	</script>
 </body>
