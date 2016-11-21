@@ -25,12 +25,29 @@
 						  ];
 			
 			var scale = d3.scaleLinear();
-			scale.domain([100, 500]);
-			scale.range([10, 350]);
-
-			//Can be done like this:
-			//var scale = de.scaleLinear().domain([100, 500]).range([10, 350]);
 			
+			d3.max(dataset, function(d) {
+				return d[0];
+			});
+
+			function max(dataset, callback) 
+			{
+				var max = callback(dataset[0]);
+				for(var i = 1; i < dataset.length; i++) 
+				{
+					if(callback(dataset[i]) > max) {
+						max = callback(dataset[i]);
+					} 
+				}	
+				debugger;
+				return max;			
+			}
+
+			var x = max(dataset, function(d) {
+				return d[0];
+			});
+
+			console.log(x);
 		</script>
 	</body>
 </html>
